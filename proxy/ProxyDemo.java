@@ -17,7 +17,7 @@ public class ProxyDemo {
 
 		DbAccessor proxy = new DbAccessor("user1", "pass1");
 
-		GetConnection directConn = GetConnection.getInstance();
+		DBConnection directConn = DBConnection.getInstance();
 
 		try {
 
