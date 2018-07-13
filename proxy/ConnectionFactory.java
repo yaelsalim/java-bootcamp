@@ -17,7 +17,7 @@ public class ConnectionFactory {
 
 	private static final String DB_URL = "db_url ";
 
-	private GetConnection getconn = null;
+	private DBConnection getconn = null;
 
 	public ConnectionFactory(String user, String pass) {
 
@@ -36,7 +36,7 @@ public class ConnectionFactory {
 
 	public void createConnection(String user, String pass) throws ClassNotFoundException, SQLException {
 
-		getconn = GetConnection.getInstance();
+		getconn = DBConnection.getInstance();
 
 		getconn.getConnection(user, pass, JDBC_DRIVER, DB_URL);
 
