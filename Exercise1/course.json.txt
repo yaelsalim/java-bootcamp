@@ -1,0 +1,43 @@
+db.course.insert({
+	_id : 1,
+	assigned_teacher: 1,
+	course_name: "Physics",
+	scheduleTime: [
+{	     day: "Monday",
+       startTime: "8:00:00",
+       endTime: "12:00:00"
+}
+]});
+
+
+db.course.insert({
+_id : 2,
+ assigned_teacher: 2,
+	course_name: "Maths",
+	scheduleTime: [
+{ day: "Tuesday",
+  startTime: "8:00:00",
+  endTime: "12:00:00"
+},{day: "Wednesday",
+  startTime: "12:00:00",
+  endTime: "15:00:00"
+}
+
+]});
+
+
+db.course.insert({
+_id : 3,
+	assigned_teacher: 3,
+	course_name: "English",
+	scheduleTime: [{
+	     day: "Thursday",
+       startTime: "8:00:00",
+       endTime: "12:00:00"
+}
+,{ day: "Friday",
+   startTime: "12:00:00",
+   endTime: "15:00:00"
+}
+
+]});
