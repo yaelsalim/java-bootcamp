@@ -1,0 +1,354 @@
+
+
+db.student.insert({
+  _id:1,
+  first_name:"Tom",
+  last_name:"Smith",
+  birthday:new Date(),
+  courses:[
+   
+    {
+      course_name:"Physics", 
+      partial_note_1 : 4,
+      partial_note_2 : 5,
+      partial_note_3 : 6,
+      final_note: 5.5
+      
+    },
+    
+    {
+      course_name:"English",
+      partial_note_1 : 4,
+      partial_note_2 : 5,
+      partial_note_3 : 6,
+      final_note: 6
+      
+    },
+    {
+      course_name:"Maths",
+      partial_note_1 : 2,
+      partial_note_2 : 2,
+      partial_note_3 : 2,
+      final_note: 2
+      
+    }
+    ]
+  
+})
+
+
+db.student.insert({
+      _id:2,
+      first_name:"Lisa",
+      last_name:"Simpson",
+      birthday:new Date(), 
+      courses:[   {
+      course_name:"Physics", 
+      partial_note_1 : 10,
+      partial_note_2 : 10,
+      partial_note_3 : 10,
+      final_note: 10
+      
+    },
+    
+    {
+      course_name:"English",
+     partial_note_1 : 10,
+      partial_note_2 : 10,
+      partial_note_3 : 10,
+      final_note: 10
+      
+    },
+    {
+      course_name:"Maths",
+      partial_note_1 : 10,
+      partial_note_2 : 10,
+      partial_note_3 : 10,
+      final_note: 10
+      
+    }
+    ]
+})
+
+db.student.insert({
+      _id:3,
+      first_name:"Maggie",
+      last_name:"Simpson",
+      birthday:new Date(), 
+      courses:[
+                 {
+      course_name:"Physics", 
+      partial_note_1 : 4,
+      partial_note_2 : 5,
+      partial_note_3 : 6,
+      final_note: 5.5
+      
+    },
+    
+    {
+      course_name:"English",
+      partial_note_1 : 10,
+      partial_note_2 : 10,
+      partial_note_3 : 10,
+      final_note: 10
+      
+    },
+    {
+      course_name:"Maths",
+      partial_note_1 : 2,
+      partial_note_2 : 2,
+      partial_note_3 : 2,
+      final_note: 2
+      
+    }
+    ]
+  
+})
+
+db.student.insert({
+      _id:4,
+      first_name:"Marge",
+      last_name:"Simpson",
+      birthday:new Date(), 
+      courses:[
+                 {
+      course_name:"Physics", 
+      partial_note_1 : 4,
+      partial_note_2 : 5,
+      partial_note_3 : 6,
+      final_note: 5.5
+      
+    },
+    
+    {
+      course_name:"English",
+      partial_note_1 : 4,
+      partial_note_2 : 5,
+      partial_note_3 : 6,
+      final_note: 6
+      
+    },
+    {
+      course_name:"Maths",
+      partial_note_1 : 10,
+      partial_note_2 : 10,
+      partial_note_3 : 10,
+      final_note: 10
+      
+    }
+    ]
+  
+})
+
+db.student.insert({
+      _id:5,
+      first_name:"Homero",
+      last_name:"Simpson",
+      birthday:new Date(), 
+      courses:[
+                 {
+      course_name:"Physics", 
+      partial_note_1 : 2,
+      partial_note_2 : 2,
+      partial_note_3 : 2,
+      final_note: 2
+      
+    },
+    
+    {
+      course_name:"English",
+        partial_note_1 : 2,
+      partial_note_2 : 2,
+      partial_note_3 : 2,
+      final_note: 2
+      
+    },
+    {
+      course_name:"Maths",
+        partial_note_1 : 2,
+      partial_note_2 : 2,
+      partial_note_3 : 2,
+      final_note: 2
+      
+    }
+    ]
+  
+})
+
+db.student.insert({
+      _id:6,
+      first_name:"Jack",
+      last_name:"Sparrow",
+      birthday:new Date(), 
+      courses:[
+                {
+      course_name:"Physics", 
+       partial_note_1 : 4,
+      partial_note_2 : 4,
+      partial_note_3 : 4,
+      final_note: 4
+      
+    },
+    
+    {
+      course_name:"English",
+      partial_note_1 : 4,
+      partial_note_2 : 4,
+      partial_note_3 : 4,
+      final_note: 4
+      
+    },
+    {
+      course_name:"Maths",
+      partial_note_1 : 4,
+      partial_note_2 : 4,
+      partial_note_3 : 4,
+      final_note: 4
+      
+    }
+    ]
+  
+})
+
+db.student.insert({
+      _id:7,
+      first_name:"Selma",
+      last_name:"Bouvier",
+      birthday:new Date(), 
+      courses:[
+                 {
+      course_name:"Physics", 
+     partial_note_1 : 4,
+      partial_note_2 : 4,
+      partial_note_3 : 4,
+      final_note: 4
+      
+    },
+    
+    {
+      course_name:"English",
+      partial_note_1 : 4,
+      partial_note_2 : 4,
+      partial_note_3 : 4,
+      final_note: 4
+      
+    },
+    {
+      course_name:"Maths",
+      partial_note_1 : 2,
+      partial_note_2 : 2,
+      partial_note_3 : 2,
+      final_note: 2
+      
+    }
+    ]
+  
+})
+
+db.student.insert({
+      _id:8,
+      first_name:"Patty",
+      last_name:"Bouvier",
+      birthday:new Date(), 
+      courses:[
+                 {
+      course_name:"Physics", 
+      partial_note_1 : 4,
+      partial_note_2 : 5,
+      partial_note_3 : 6,
+      final_note: 5.5
+      
+    },
+    
+    {
+      course_name:"English",
+      partial_note_1 : 4,
+      partial_note_2 : 5,
+      partial_note_3 : 6,
+      final_note: 6
+      
+    },
+    {
+      course_name:"Maths",
+      partial_note_1 : 4,
+      partial_note_2 : 4,
+      partial_note_3 : 4,
+      final_note: 4
+      
+    }
+    ]
+  
+})
+
+
+db.student.insert({
+      _id:9,
+      first_name:"Homer",
+      last_name:"Addams",
+      birthday:new Date(), 
+      courses:[
+                 {
+      course_name:"Physics", 
+      partial_note_1 : 4,
+      partial_note_2 : 5,
+      partial_note_3 : 6,
+      final_note: 5.5
+      
+    },
+    
+    {
+      course_name:"English",
+      partial_note_1 : 4,
+      partial_note_2 : 5,
+      partial_note_3 : 6,
+      final_note: 6
+      
+    },
+    {
+      course_name:"Maths",
+     partial_note_1 : 4,
+      partial_note_2 : 4,
+      partial_note_3 : 4,
+      final_note: 4
+      
+    }
+    ]
+  
+})
+
+db.student.insert({
+      _id:10,
+      first_name:"Morticia",
+      last_name:"Addams",
+      birthday:new Date(), 
+      courses:[
+                 {
+      course_name:"Physics", 
+       partial_note_1 : 10,
+      partial_note_2 : 10,
+      partial_note_3 : 10,
+      final_note: 10
+      
+    },
+    
+    {
+      course_name:"English",
+      partial_note_1 : 10,
+      partial_note_2 : 10,
+      partial_note_3 : 10,
+      final_note: 10
+      
+    },
+    {
+      course_name:"Maths",
+       partial_note_1 : 4,
+      partial_note_2 : 5,
+      partial_note_3 : 6,
+      final_note: 5.5
+      
+    }
+    ]
+  
+})
+
+

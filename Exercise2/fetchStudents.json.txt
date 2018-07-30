@@ -1,0 +1,1 @@
+db.student.find({"courses" : { $elemMatch : {course_name : "Physics", final_note : {$gte : 4.0 }}}}).pretty();
