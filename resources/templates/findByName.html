@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Product Search Page By Name</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>Search for a product by name</h1>
+    <form action="#" th:action="@{/findByName}" th:object="${product}" method="post">
+     <label for="inputName" class="sr-only">Name: </label>
+      <input type="text" th:field="*{name}" name="category" id="inputName" class="form-control" placeholder="Name" required="required" autofocus="autofocus" />
+      <p><input type="submit" value="Search" /> <input type="reset" value="Reset" /></p>
+     </form> 
+     <span th:if="${productList != null}">
+        <table>
+	      <tr>
+	        <th>NAME</th>
+	        <th>PRICE</th>
+	        <th>IN STOCK</th>
+	        <th>CATEGORY</th>
+	      </tr>
+	      <tr th:each="prod : ${productList}">
+	        <td th:text="${prod.name}"></td>
+	        <td th:text="${prod.unitPrice}"></td>
+	        <td th:text="${prod.quantity}"></td>
+	         <td th:text="${prod.category}"></td>
+	      </tr>
+	    </table>  
+    </span>
+   
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Menu</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>User Menu</h1>
+	<div>
+    <ul>
+	    <li><a  href="/findByCategory" th:href="@{/findByCategory}">Find Products By Category </a></li>
+	    <li><a href="/findByName" th:href="@{/findByName}">Find Products By Name </a></li>
+	    <li><a href="/saveCart" th:href="@{/saveCart}">Save Cart</a></li>
+	    <li><a href="/addProductsToCart" th:href="@{/addToCart}" >Adds Products to the cart</a></li>
+	    <li><a href="/buyProducts" th:href="@{/buyProducts}" >Buy Products</a></li>
+
+    </ul>
+	</div>
+</body>
+</html>
