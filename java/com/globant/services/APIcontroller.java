@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.globant.models.Product;
@@ -19,7 +20,7 @@ import com.globant.models.User;
 import io.swagger.annotations.ApiOperation;
 
 /**
- * This is the controller of the Api. It handles HTTP requests.
+ * API's controller. Handles HTTP requests.
  * 
  * @author Yael Salim
  *
@@ -45,7 +46,7 @@ public class APIcontroller {
 	 * 
 	 * @return
 	 */
-	@RequestMapping(value = "/users")
+	@GetMapping(value = "/users")
 	public @ResponseBody List<User> getUsers() {
 
 		return userService.getUsers();
@@ -159,7 +160,7 @@ public class APIcontroller {
 	 * 
 	 * @return
 	 */
-	@RequestMapping(value = "/products")
+	@GetMapping(value = "/products")
 	public @ResponseBody List<Product> getProducts() {
 
 		return productService.listProducts();
@@ -170,12 +171,18 @@ public class APIcontroller {
 	 * 
 	 * @return
 	 */
-	@RequestMapping(value = "/carts")
+	@GetMapping(value = "/carts")
 	public @ResponseBody List<ShoppingCart> getCarts() {
 
 		return cartService.getCarts();
 	}
 
+	/**
+	 * Handles GET request when adding products to the cart
+	 * 
+	 * @param model
+	 * @return
+	 */
 	@GetMapping(value = "/addToCart")
 	@ApiOperation(value = "Add product to cart.", nickname = "Add product.")
 	public String addToCart(Model model) {
@@ -186,7 +193,13 @@ public class APIcontroller {
 		return "addToCart";
 	}
 
-	@RequestMapping(value = "/addToCart")
+	/**
+	 * Adds product to the cart
+	 * 
+	 * @param request
+	 * @return
+	 */
+	@PostMapping(value = "/addToCart")
 	@ResponseBody
 	@ApiOperation(value = "Add product.", nickname = "Add product.")
 	public String addToCartResult(@ModelAttribute Product request) {
@@ -194,11 +207,11 @@ public class APIcontroller {
 		if (request.getQuantity() != null && request.getQuantity() > 0) {
 
 			ShoppingCart cart = cartService.findByUserName(sessionID);
-			
+
 			Product product = productService.findByName(request.getName());
-			
+
 			product.setQuantity(request.getQuantity());
-			
+
 			if (cart == null) {
 
 				cartService.create(sessionID);
@@ -329,7 +342,7 @@ public class APIcontroller {
 	 * 
 	 * @return
 	 */
-	@RequestMapping(value = "/saveCart")
+	@RequestMapping(value = "/saveCart", method = { RequestMethod.GET, RequestMethod.POST })
 	@ResponseBody
 	@ApiOperation(value = "Save user cart.", nickname = "Save user cart.")
 	public String saveCart() {
@@ -345,6 +358,56 @@ public class APIcontroller {
 			cartService.saveCart(cart);
 
 			return "Cart was saved successfully.";
+
+		}
+
+	}
+
+	/**
+	 * Delete a product from cart
+	 * 
+	 * @return
+	 */
+	@GetMapping(value = "/deleteFromCart")
+	@ApiOperation(value = "Deletes a product from cart.", nickname = "Delete a product from cart.")
+	public String deleteFromCart(Model model) {
+
+		List<Product> products = productService.listProducts();
+		model.addAttribute("productList", products);
+		model.addAttribute("product", new Product());
+
+		return "deleteFromCart";
+	}
+
+	/**
+	 * Delete a product from cart
+	 * 
+	 * @return
+	 */
+	@PostMapping(value = "/deleteFromCart")
+	@ResponseBody
+	@ApiOperation(value = "Deletes a product from cart.", nickname = "Delete a product from cart.")
+	public String deleteFromCart(@ModelAttribute Product request) {
+
+		ShoppingCart cart = cartService.findByUserName(sessionID);
+
+		Product product = productService.findByName(request.getName());
+
+		if (cart == null) {
+
+			return "Cart not found for user name : " + sessionID;
+
+		} else {
+			if (!cart.getProductList().contains(product)) {
+
+				return "Product was not found in the cart.";
+			}
+
+			cart.deleteItemFromCart(product);
+
+			cartService.saveCart(cart);
+
+			return "Product was removed successfully.";
 
 		}
 
