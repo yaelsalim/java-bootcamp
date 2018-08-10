@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Registration Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>User Registration</h1>
+     <span th:if="${userNameErr}" class= "error">User already exists</span> 
+    <form action="#" th:action="@{/register}" th:object="${User}" method="post">
+     <label for="inputUsername" class="sr-only">User Name: </label>
+      <input type="text" th:field="*{username}" name="username" id="inputUsername" class="form-control" placeholder="Username" required="required" autofocus="autofocus" />
+    <label for="inputName" class="sr-only">Name: </label>
+      <input type="text" th:field="*{name}" name="name" id="inputName" class="form-control" placeholder="Name" required="required" autofocus="autofocus" />
+    <label for="inputPassword" class="sr-only">Password: </label>
+      <input type="text" th:field="*{password}" name="password" id="inputPassword" class="form-control" placeholder="Password" required="required" autofocus="autofocus" />
+        <p><input type="submit" value="Save" /> <input type="reset" value="Reset" /></p>
+    </form>
+</body>
+</html>
