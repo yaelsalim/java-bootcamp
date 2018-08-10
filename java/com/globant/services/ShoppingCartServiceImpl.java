@@ -10,7 +10,7 @@ import com.globant.models.ShoppingCart;
 import com.globant.repositories.CartRepository;
 
 /**
- * This class implements the ShoppingCartService interface
+ * ShoppingCartService interface
  * 
  * @author Yael Salim
  *
@@ -25,7 +25,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 		shoppingCarts.save(new ShoppingCart(userName));
 	}
 
-	public Double payOrder(String userName) {
+	public Float payOrder(String userName) {
 		return shoppingCarts.findByUserName(userName).buyProducts();
 	}
 

@@ -16,7 +16,7 @@ public interface ProductService {
 	 * @param quantity
 	 * @param unitPrice
 	 */
-	void create(String name, String category, Integer quantity, Double unitPrice);
+	void create(String name, String category, Integer quantity, Float unitPrice);
 
 	/**
 	 * Returns a product for a given id.

@@ -16,7 +16,7 @@ public class ProductServiceImpl implements ProductService {
 	private ProductRepository repository;
 
 	@Override
-	public void create( String name, String category, Integer quantity, Double unitPrice) {
+	public void create( String name, String category, Integer quantity, Float unitPrice) {
 		repository.insert(new Product(name, category, quantity, unitPrice));
 	}
 

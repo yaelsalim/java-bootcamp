@@ -6,7 +6,7 @@ import com.globant.models.Product;
 import com.globant.models.ShoppingCart;
 
 /**
- * This interface represents a shopping cart service
+ * Shopping cart service
  * 
  * @author Yael Salim
  *
@@ -27,7 +27,7 @@ public interface ShoppingCartService {
 	 * @param userName
 	 */
 
-	public Double payOrder(String userName);
+	public Float payOrder(String userName);
 
 	/**
 	 * Saves the current cart.
@@ -44,7 +44,7 @@ public interface ShoppingCartService {
 	public void deleteCart(String userName);
 
 	/**
-	 * This method adds a product in a cart
+	 * Adds a product in a cart
 	 * 
 	 * @param newProduct
 	 * @param userName
@@ -52,7 +52,7 @@ public interface ShoppingCartService {
 	public void addProductToCart(Product newProduct, String userName);
 
 	/**
-	 * This method deletes a product from a cart
+	 * Deletes a product from a cart
 	 * 
 	 * @param selectedProduct
 	 * @param userName
@@ -60,9 +60,10 @@ public interface ShoppingCartService {
 	public void deleteProductFromCart(Product selectedProduct, String userName);
 
 	/**
-	 * This method returns all carts
+	 * Returns all carts
 	 */
-	public  List<ShoppingCart> getCarts();
+	public List<ShoppingCart> getCarts();
+
 	/**
 	 * Finds a cart for a given name
 	 * 
