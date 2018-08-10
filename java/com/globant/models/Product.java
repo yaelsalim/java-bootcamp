@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
- * This class models a product.
+ * Product model.
  * 
  * @author Yael Salim
  *
@@ -22,12 +22,12 @@ public class Product {
 
 	private Integer quantity;
 
-	private Double unitPrice;
+	private Float unitPrice;
 
 	public Product() {
 	}
 
-	public Product(String name, String category, Integer quantity, Double unitPrice) {
+	public Product(String name, String category, Integer quantity, Float unitPrice) {
 
 		this.name = name;
 		this.category = category;
@@ -51,11 +51,11 @@ public class Product {
 		this.quantity = quantity;
 	}
 
-	public Double getUnitPrice() {
+	public Float getUnitPrice() {
 		return unitPrice;
 	}
 
-	public void setUnitPrice(Double unitPrice) {
+	public void setUnitPrice(Float unitPrice) {
 		this.unitPrice = unitPrice;
 	}
 

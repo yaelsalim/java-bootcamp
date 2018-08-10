@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
- * This class models a shopping cart for a given user.
+ * Shopping cart for a given user.
  * 
  * @author Yael Salim
  *
@@ -43,7 +43,7 @@ public class ShoppingCart {
 	}
 
 	/**
-	 * This method adds an item to the cart
+	 * Adds an item to the cart
 	 * 
 	 * @param productItem
 	 */
@@ -57,7 +57,7 @@ public class ShoppingCart {
 	}
 
 	/**
-	 * This method deletes an item from the cart
+	 * Deletes an item from the cart
 	 * 
 	 * @param productItem
 	 */
@@ -76,22 +76,22 @@ public class ShoppingCart {
 	}
 
 	/**
-	 * The buyProducts method returns the total cost of the items from the
+	 * Returns the total cost of the items from the
 	 * shopping-cart.
 	 * 
 	 * @return cost
 	 */
 
-	public Double buyProducts() {
-		Double cost = 0.0;
+	public Float buyProducts() {
+		Float cost = (float) 0.0;
 		for (Product product : productList) {
-			cost += product.getUnitPrice();
+			cost += product.getUnitPrice()* product.getQuantity();
 		}
 		return cost;
 	}
 
 	/**
-	 * The cartSize method returns the size of the shopping-cart.
+	 * Returns the size of the shopping-cart.
 	 * 
 	 * @return integer
 	 */
